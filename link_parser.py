@@ -67,8 +67,7 @@ def crawl_website(start_url):
             # 2. The link starts with the original start_url (same path hierarchy).
             # 3. The link has not been visited yet.
             # 4. The link is not already in our queue to visit.
-            if (domain_name in full_url and 
-                full_url.startswith(start_url) and 
+            if (parsed_full_url.netloc == domain_name and 
                 full_url not in visited_urls and 
                 full_url not in urls_to_visit):
                 urls_to_visit.add(full_url)
